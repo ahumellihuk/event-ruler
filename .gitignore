@@ -21,3 +21,27 @@ buildNumber.properties
 
 # Idea
 .idea/
+
+# Build artifacts
+dist/
+node_modules/
+*.log
+
+# TypeScript
+*.tsbuildinfo
+
+# Yarn
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
+.pnp.*
+
+# IDEs
+.vscode/
+.idea/
+
+# Miscellaneous
+.DS_Store
