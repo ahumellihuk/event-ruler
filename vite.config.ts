@@ -4,7 +4,7 @@ import checker from 'vite-plugin-checker'
 export default defineConfig({
   build: {
     lib: {
-      entry: 'src/types/software/amazon/event/ruler/JsonRuleCompiler.ts',
+      entry: 'src/js/JsonRuleCompiler.ts',
       name: 'event-ruler',
       formats: ['es'],
     },

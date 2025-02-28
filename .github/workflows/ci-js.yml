@@ -6,25 +6,37 @@ name: CI (JS)
 on:
   push:
     branches: [ "main" ]
+    paths:
+      - .github/workflows/ci-js.yml
+      - src/js/**
+      - .yarnrc.yml
+      - package.json
+      - tsconfig.json
+      - vite.config.ts
+      - yarn.lock
+
   pull_request:
     branches: [ "main" ]
+    paths:
+      - .github/workflows/ci-js.yml
+      - src/js/**
+      - .yarnrc.yml
+      - package.json
+      - tsconfig.json
+      - vite.config.ts
+      - yarn.lock
 
 jobs:
   build:
 
     runs-on: ubuntu-latest
 
-    strategy:
-      matrix:
-        node-version: [22.x]
-        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
-
     steps:
     - uses: actions/checkout@v4
-    - name: Use Node.js ${{ matrix.node-version }}
+    - name: Setup Node.js
       uses: actions/setup-node@v4
       with:
-        node-version: ${{ matrix.node-version }}
+        node-version: 22
         cache: 'yarn'
     - run: yarn
     - run: yarn build

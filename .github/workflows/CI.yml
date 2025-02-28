@@ -4,9 +4,21 @@ permissions: {}
 on:
   push:
     branches: ["main"]
+    paths:
+      - .github/workflows/CI.yml
+      - config/checkstyle/**
+      - src/main/**
+      - src/test/**
+      - pom.xml
 
   pull_request:
     branches: ["main", "release-*"]
+    paths:
+      - .github/workflows/CI.yml
+      - config/checkstyle/**
+      - src/main/**
+      - src/test/**
+      - pom.xml
 
 concurrency:
   group: java-build-${{ github.head_ref || github.run_id }}
